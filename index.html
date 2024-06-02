@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>	
+        <title>CEE TV LIVE CHANNEL</title>
+	
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: url('') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: glowing 2s infinite;
+        }
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding: 10px 30px 10px 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid #007BFF;
+            border-radius: 4px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23007BFF" d="M7 10l5 5 5-5z"/></svg>') no-repeat;
+            background-position: right 10px center;
+            background-size: 12px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        select:hover {
+            background-color: #f8f9fa;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .ad-container {
+            margin: 20px 0;
+            background-color: #d9d9d9;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            color: #333;
+            border-radius: 4px;
+        }
+
+        @keyframes glowing {
+
+            0% { color: #333; text-shadow: none; }
+
+            50% { color: #fff; text-shadow: 0 0 8px #fff; }
+
+            100% { color: #333; text-shadow: none; }
+
+        }
+    </style>
+</head>
+	<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Modal Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="adModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>ads</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+    <div id="clickTimes"></div>
+<div class="container">
+    <h1>Watch Live Channels</h1>
+<select id="channelSelect" onchange="changeChannel(this.value)">
+  <option value="https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/a2zsd.m3u8">A2Z</option>
+  <option value="https://cdn1.skygo.mn/live/disk1/Boomerang/HLS-FTA/Boomerang.m3u8">Cartoonito</option>
+  <option value="https://lnc-americas-dumbest-criminals.tubi.video/index.m3u8">AMERICAS DUMBEST CRIMINALS</option>
+  <option value="https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/animalplanet_qp.m3u8">ANIMAL PLANET</option>
+  <option value="https://adultswim-vodlive.cdn.turner.com/live/test-2/stream.m3u8">ADULT CARTOON</option>
+  <option value="https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/animax_qp.m3u8">ANIMAX PHILIPPINES</option>
+  <option value="https://lightning-actionhollywood-xiaomi.amagi.tv/playlist.m3u8">Action Hollywood Movies</option>
+  <option value="https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/axn_qp.m3u8">AXN</option>
+  <option value="https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/bbcearthhd_qp.m3u8">BBC EARTH HD</option>
+  <option value="https://cdn1.skygo.mn/live/disk1/Boomerang/HLS-FTA/Boomerang.m3u8">BOOMERANG</option>
+  <option value="http://170.254.18.106/COMEDY_CENTRAL/index.m3u8">COMEDY CENTRAL</option>
+  <option value="https://webtelly-streams.akamaized.net/prod-cbc-comedy-rtp/hls/master.m3u8">CBS COMEDY</option>
+  <option value="https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cinemaxhd_qp.m3u8">CINEMAX</option>
+  <option value="https://cinemaone-abscbn-ono.amagi.tv/index.m3u8">CINEMA ONE</option>
+  <option value="https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/cartoonnetworkhd_dr.m3u8">CARTOON NETWORK</option>
+  <option value="https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01201-cinedigmenterta-comedydynamics-cineverse/playlist.m3u8">COMEDY DYNAMICS</option>
+  <option value="https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/crimeinvestigation_dr.m3u8">CRIME INVESTIGATION</option>
+  <option value="https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/cnnph_qp.m3u8">CNN PH</option>
+  <option value="https://adultswim-vodlive.cdn.turner.com/live/daily_animated_1/stream.m3u8">DAILY ANIMATED</option>
+  <option value="https://stream.gmanews.tv/ioslive/livestream/playlist.m3u8">DZBB</option>
+  <option value="http://143.244.60.30/ESPN/index.m3u8">ESPN</option>
+  <option value="https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/discovery_dr.m3u8">DISCOVERY</option>
+  <option value="https://cdn1.skygo.mn/live/disk1/Discovery_Asia/HLS-FTA/Discovery_Asia.m3u8">DISCOVERY ASIA</option>
+  <option value="https://dreamstartv.com/hls/stream.m3u8">DREAMSTAR TV</option>
+  <option value="https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/dreamworkstag_qp.m3u8">DREAMWORKS</option>
+  <option value="https://edge1.laotv.la/live/HBO/index.m3u8">HBO</option>
+  <option value="https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/hbosighd_qp.m3u8">HBO HD</option>
+  <option value="https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/hbofamilyhd_qp.m3u8">HBO FAMILY</option>
+  <option value="https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/historyhd_dr.m3u8">HISTORY HD</option>
+  <option value="https://qp-pldt-live-grp-08-prod.akamaized.net/out/u/hitshd_qp.m3u8">HITS HD</option>
+  <option value="https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/hitsmovies_dr.m3u8">HITS MOVIES</option>
+  <option value="https://qp-pldt-live-grp-09-prod.akamaized.net/out/u/hitsnow_qp.m3u8">HITS NOW</option>
+  <option value="https://adultswim-vodlive.cdn.turner.com/live/mr-pickles/stream.m3u8">MR PICKLES</option>
+  <option value="https://ythls.armelin.one/channel/UC5IF8NlxMW1GkEUUqWJJBIw.m3u8">NET 25</option>
+  <option value="https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/nickelodeon_dr.m3u8">NICKELODEON</option>
+  <option value="https://newidco-newkid-1-eu.xiaomi.wurl.tv/playlist.m3u8">NEW KPOP (EU)</option>
+  <option value="https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/onesports_qp.m3u8">ONE SPORT</option>
+  <option value="https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/pbarushhd_qp.m3u8">PBA RUSH</option>
+  <option value="https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/a2zsd.m3u8">PINOY NOONTIME</option>
+  <option value="https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/pinoyboxoffice_qp.m3u8">PINOY BOX OFFICE</option>
+  <option value="https://rakuten-action-8-nl.samsung.wurl.tv/playlist.m3u8">RAKUTEN ACTION</option>
+  <option value="https://rakuten-comedy-8-nl.samsung.wurl.tv/playlist.m3u8">RAKUTEN COMEDY</option>
+  <option value="https://rakuten-comedymovies-1-eu.rakuten.wurl.tv/playlist.m3u8">RAKUTEN COMEDY MOVIES</option>
+  <option value="https://newidco-rakutenviki-2-eu.xiaomi.wurl.tv/playlist.m3u8">Rakuten Viki (EU)</option>
+  <option value="https://rakuten-topfree-7-eu.rakuten.wurl.tv/playlist.m3u8">RAKUTEN TOP FILMS</option>
+  <option value="https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/rockextreme_dr.m3u8">ROCK EXTREME</option>
+  <option value="https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/rockentertainment_dr.m3u8">ROCK ENTERTAINMENT</option>
+  <option value="https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/tapactionflixhd_qp.m3u8">TAP ACTION</option>
+  <option value="https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/tapedge_dr.m3u8">TAP EDGE</option>
+  <option value="https://qp-pldt-live-grp-06-prod.akamaized.net/out/u/vivacinema_qp.m3u8">VIVA CINEMA</option>
+  <option value="https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/warnertvhd_dr.m3u8">WARNER TV</option>
+  <option value="https://newidco-ygtv-1-eu.xiaomi.wurl.tv/playlist.m3u8">YG TV (EU)</option>
+  <option value="https://qp-pldt-live-grp-02-prod.akamaized.net/out/u/tv5_qp.m3u8">TV 5</option>
+  <option value="https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/natgeowild_dr.m3u8">TVN MOVIES</option>
+  <option value="https://answermedia-fite-tv-1-eu.xiaomi.wurl.tv/playlist.m3u8">Fite TV (EU)</option>
+  <option value="https://ythls.armelin.one/channel/UCJCUbMaY593_4SN1QPG7NFQ.m3u8">PTV 4</option>
+  <option value="http://watchtv.best:80/play/live.php?mac=00:1A:79:01:44:12&stream=223021&extension=ts">GMA LIVE TV</option>
+  <option value="http://watchtv.best:80/play/live.php?mac=00:1A:79:01:44:12&stream=223025&extension=ts">GMA NEWS TV</option>
+  <option value="http://watchtv.best:80/play/live.php?mac=00:1A:79:01:44:12&stream=223027&extension=ts">GMA PINOY TV</option>
+  <option value="https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/celestialmoviespinoy_qp.m3u8">CELESTIAL MOVIES PINOY</option>
+  <option value="https://newidco-sbs-1-eu.xiaomi.wurl.tv/playlist.m3u8">SBS (EU)</option>
+</select>
+    <video id="video" controls></video>
+    <div class="ad-container">
+       ads
+    </div>
+</div>
+
+<script>
+    function closead() {
+            document.getElementById('vigneta').style.display = 'none';
+        }
+    function changeChannel(channelUrl) {
+        // Show interstitial ad before changing the channel
+        showInterstitialAd().then(() => {
+            // Proceed to change the channel after showing the ad
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(channelUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = channelUrl;
+                video.addEventListener('canplay', function() {
+                    video.play();
+                });
+            } else {
+                console.error('HLS not supported');
+            }
+        }).catch(error => {
+            console.error('Error showing interstitial ad:', error);
+        });
+    }
+
+    // Function to show interstitial ad
+    function showInterstitialAd() {
+        return new Promise((resolve, reject) => {
+            // This is a placeholder function. Replace it with the actual function call to show an interstitial ad
+            // provided by your ad network. Ensure to resolve the promise once the ad has been displayed or closed.
+            console.log("Showing interstitial ad...");
+
+            // Example: resolve the promise after a timeout to simulate ad display
+            setTimeout(() => {
+                console.log("Interstitial ad shown");
+                resolve();
+            }, 1000); // Simulate a 3-second ad display
+        });
+    }
+</script>
+	<divi><p id="visitorCount"></p>
+<p id="visitorCountry"></p></divi>
+	    <!-- Add the 'social-media-buttons' class to a container div -->
+    <div class="social-media-buttons">
+        <!-- Facebook Share Button -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://hd-tv.vercel.app/" target="_blank">
+            <img src="https://img.freepik.com/premium-vector/social-media-icon-illustration-facebook-facebook-icon-vector-illustration_561158-2134.jpg?size=338&ext=jpg&ga=GA1.1.553209589.1713916800&semt=ais" alt="Share on Facebook" width="50" height="50">
+        </a>
+
+        <!-- Twitter Share Button -->
+        <a href="https://twitter.com/intent/tweet?url=https://hd-tv.vercel.app/&text=Check%20out%20this%20amazing%20content!" target="_blank">
+            <img src="https://www.freeiconspng.com/thumbs/twitter-icon/keywords-colors-icons-desktop-icons-style-simple-3.png" alt="Share on Twitter" width="50" height="50">
+        </a>
+
+        <!-- Instagram Share Button -->
+        <a href="https://www.instagram.com/?url=https://hd-tv.vercel.app/" target="_blank">
+            <img src="https://image.similarpng.com/thumbnail/2020/05/New-Instagram-icon-vector-PNG.png" alt="Share on Instagram" width="50" height="50">
+        </a>
+
+        <!-- Add more social media platforms as needed -->
+    </div>
+
+</body>
+	<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Increment visitor count (simplified example, not unique visitors)
+            let visitorsCount = parseInt(localStorage.getItem('visitorsCount') || '0') + 1;
+            localStorage.setItem('visitorsCount', visitorsCount.toString());
+
+            // Display visitor count
+            document.getElementById('visitorCount').textContent = `Visitor Count: ${visitorsCount}`;
+
+            // Fetch and display visitor's country using a fictional IP geolocation API
+            fetch('https://api.ipgeolocation.io/getCountry?apiKey=02643877fddb45d7b609d7b29a8a62a9')
+                .then(response => response.json())
+                .then(data => {
+			const country = data.country_name;
+
+                        // Restrict ad based on country
+                        if (country === 'Philippines' || country === 'India') {
+                            console.log('Ad restricted for country:', country);
+                            document.getElementById('adText').textContent = 'Ads restricted for your country';
+                            resolve(); // Skip showing the ad
+                        } else {
+                            // Show the ad (replace with your actual ad code)
+                            console.log('Showing interstitial ad...');
+                            document.getElementById('adModal').style.display = 'block';
+
+                            // Simulate ad display for 3 seconds
+                            setTimeout(() => {
+                                console.log('Interstitial ad shown');
+                                document.getElementById('adModal').style.display = 'none';
+                                resolve(); // Ad shown, resolve the promise
+                            }, 3000);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching country:', error);
+                        resolve(); // Skip showing the ad in case of an error
+                    });
+            });
+        }
+    </script>
+	<script>
+                    document.getElementById('visitorCountry').textContent = `Your Country: ${data.country}`;
+                }).catch(error => {
+                    console.error('Error fetching country:', error);
+                    document.getElementById('visitorCountry').textContent = `Your Country: Unable to determine`;
+                });
+        });
+    </script>
+	<divi><p id="visitorCount"></p>
+<p id="visitorCountry"></p></divi>
+</html>
